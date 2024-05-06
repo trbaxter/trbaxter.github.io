@@ -712,11 +712,35 @@ input, select, textarea {
 
 		}
 
+		.image.main.about.me.wildhair {
+        			display: block;
+        			margin: 2.5rem 0;
+        			height: 50%;
+                    width: 50%;
+        		}
+
+        			image.main.about.me.wildhair img {
+        			    height: 50%;
+        				width: 50%;
+        			}
+
+        		@media screen and (max-width: 736px) {
+
+        			image.main.about.me.wildhair {
+        				margin: 2rem 0;
+        			}
+
+        		}
+
 		@media screen and (max-width: 480px) {
 
 			.image.main {
 				margin: 1.5rem 0;
 			}
+
+			.image.main.about.me.wildhair {
+            	margin: 1.5rem 0;
+            			}
 
 		}
 
