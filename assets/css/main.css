@@ -1332,7 +1332,7 @@ input, select, textarea {
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
 				padding: 3rem 2rem;
-				max-height: 30rem;
+				max-height: 15rem;
 				overflow: hidden;
 			}
 
@@ -1634,6 +1634,38 @@ input, select, textarea {
 			}
 
 		}
+
+/* Projects Section */
+
+    span.frac-calc-progress-text {
+        opacity: 0.5;
+        text-transform: lowercase;
+    }
+
+    .calc-photo-credit {
+        position: relative;
+        font-size: 0.75rem;
+        opacity: 0.65;
+        text-align: right;
+    }
+
+    span.image.main {
+        margin-bottom: 0;
+    }
+
+    .calc-photo-details {
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    @media screen and (max-width: 768px) {
+        .calc-photo-credit {
+            display: block;
+            margin-top: 0;
+            font-size: 0.7rem;
+        }
+    }
+
 
 /* Footer */
 
