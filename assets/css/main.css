@@ -1643,6 +1643,49 @@ input, select, textarea {
         }
     }
 
+/* Work Experience Section */
+
+    .timeline {
+        position: relative;
+        height: 640px;
+        margin: 50px auto;
+        margin-left: 5px;
+        width: 2px;
+        background-color: #333
+    }
+
+    .dot {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        background-color: #000000;
+        border-radius: 50%;
+        border: 2px solid white;
+    }
+
+    .dot:nth-child(3) {
+        margin-top: 25px; /* Adjust the distance from the top for the second dot */
+    }
+
+    .experience {
+        white-space: nowrap;
+        display: inline-block;
+        max-width: 900px;
+        margin: -32px 20px 20px;
+    }
+
+    .experience h3 {
+        margin: 5px 0;
+        text-align: left;
+    }
+
+    .experience p {
+        margin: 0;
+        color: solid white; /* Color of the description text */
+        margin: -5px 0px 0px;
+    }
 
 /* Footer */
 
