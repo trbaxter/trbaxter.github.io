@@ -1647,7 +1647,7 @@ input, select, textarea {
 
     .timeline {
         position: relative;
-        height: 1415px;
+        height: 925px;
         margin: 50px auto;
         margin-left: 5px;
         width: 2px;
@@ -1685,6 +1685,22 @@ input, select, textarea {
         margin: 0;
         color: solid white; /* Color of the description text */
         margin: -5px 0px 0px;
+    }
+
+    .image-container {
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .image-row {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .work-badge {
+        margin: 5px;
+        height: 30px;
+        width: auto;
     }
 
 /* Footer */
