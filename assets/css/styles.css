@@ -27,9 +27,9 @@ label {
     top: 20px;
     right: 40px;
     display: block;
-    background: #141414;
+    background: #ebebeb;   /* Background of the slider with lightmode on */
     border-radius: 37.5px;
-    box-shadow: inset 0px 0.9375px 2.8125px rgba(0,0,0,0.4), inset 0px -0.9375px 2.8125px rgba(255,255,255,0.4);
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
     cursor: pointer;
     transition: 0.5s;
     z-index: 999;
@@ -42,9 +42,9 @@ label:after {
     position: absolute;
     top: 1.875px;
     left: 1.875px;
-    background: #F5F5F5;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);    /* Color of slider button when lightmode is on */
     border-radius: 33.75px;
-    box-shadow: 0px 0.9375px 1.875px rgba(0,0,0,0.2);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
     transition: 0.5s;
 }
 
@@ -65,11 +65,11 @@ input:checked + label {
 input:checked + label:after {
     left: 91.875px;
     transform: translateX(-100%);
-    background: #F5F5F5;    /* Color of the button when darkmode is on */
+    background: #ebebeb;    /* Color of the button when darkmode is on */
 }
 
 input:checked + label + .background {
-    background: #141414;
+    background: #242424;    /* Background when darkmode is on */
 }
 
 .black-text {
@@ -100,4 +100,33 @@ input:checked + label ~ .content a {
 
 input:checked + label ~ .content a:hover {
     color: #0383ad; /* Color for hyperlinks when in dark mode */
+}
+
+.sun {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 6px;
+    right: 62px;
+    z-index: 100;
+}
+
+.moon {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 6px;
+    right: 6px;
+    z-index: 100;
+    opacity: .25
+}
+
+input:checked + label .moon {
+    opacity: 1; /* Color for moon symbol when in dark mode */
+    transition: 0.5s;
+}
+
+input:checked + label .sun {
+    opacity: .25; /* Color for moon symbol when in dark mode */
+    transition: 0.5s;
 }
