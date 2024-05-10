@@ -75,6 +75,7 @@ input:checked + label + .background {
 .black-text {
     color: #000; /* Default black color for light mode */
     font-family: Times New Roman;
+    scale: 0.9;
 }
 
 input:checked + label ~ .content .black-text {
@@ -129,4 +130,9 @@ input:checked + label .moon {
 input:checked + label .sun {
     opacity: .25; /* Color for moon symbol when in dark mode */
     transition: 0.5s;
+}
+
+.horizontal-separator {
+    width: 61.5%;
+    margin-left: 100px;
 }
