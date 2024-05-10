@@ -1,13 +1,23 @@
-body {
-    padding: 0;
+html, body {
     margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.body {
+    position: relative;
+}
+
+.background {
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
     background: #F5F5F5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.5s;
 }
 
 label {
@@ -15,7 +25,7 @@ label {
     height: 37.5px;
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 40px;
     display: block;
     background: #141414;
     border-radius: 37.5px;
@@ -49,22 +59,13 @@ input[type=checkbox]:checked + label {
 }
 
 input:checked + label {
-    background: #02a4fc;
+    background: #02a4fc;   /* Background of the slider */
 }
 
 input:checked + label:after {
     left: 91.875px;
     transform: translateX(-100%);
-    background: #F5F5F5;
-}
-
-.background {
-    width: 100vw;
-    height: 100vh;
-    background: #F5F5F5;
-    z-index: -1;
-    position: absolute;
-    transition: 0.5s;
+    background: #F5F5F5;    /* Color of the button when darkmode is on */
 }
 
 input:checked + label + .background {
@@ -72,9 +73,31 @@ input:checked + label + .background {
 }
 
 .black-text {
-    color: #000; /* Default color for light mode */
+    color: #000; /* Default black color for light mode */
+    font-family: Times New Roman;
 }
 
 input:checked + label ~ .content .black-text {
     color: #F5F5F5; /* Color for dark mode */
+}
+
+a {
+    color: #0066cc; /* Default color of hyperlinks */
+    text-decoration: none; /* Removes hyperlink underline */
+}
+
+a:hover {
+    color: #0044cc; /* Color on hover */
+}
+
+a:visited {
+    color: #purple; /* Color of visited links */
+}
+
+input:checked + label ~ .content a {
+    color: #02a4fc; /* Color for hyperlinks when in dark mode */
+}
+
+input:checked + label ~ .content a:hover {
+    color: #0383ad; /* Color for hyperlinks when in dark mode */
 }
