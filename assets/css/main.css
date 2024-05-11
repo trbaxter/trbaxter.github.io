@@ -269,10 +269,9 @@ input, select, textarea {
 	}
 
 	pre {
-		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
-		font-size: 0.9rem;
+		font-family: "Source Sans Pro", sans-serif;
 		margin: 0 0 2rem 0;
+		white-space: pre-wrap;
 	}
 
 		pre code {
@@ -1612,6 +1611,159 @@ input, select, textarea {
 
 		}
 
+/* About Section */
+
+    #about-intro {
+        margin-bottom: 0px;
+        white-space: pre-line;
+    }
+
+    @media (max-width: 460px) {
+        #about-intro {
+            white-space: normal;
+        }
+    }
+
+    #catpicture {
+        width: 100%;
+        object-fit: cover;
+        margin-top: 0rem;
+    }
+
+    #gibhubactivitypicture {
+        width: 100%;
+    }
+
+    #catpicturetext {
+        opacity: 65%;
+        font-size: 13pt;
+        position: relative;
+        top: -0.5rem;
+    }
+
+    @media screen and (max-width: 1680px) {
+
+        #catpicturetext {
+            font-size: 9.75pt;
+        }
+    }
+
+    @media screen and (max-width: 736px) {
+
+        #catpicturetext {
+            font-size: 8.9375pt;
+        }
+    }
+
+    @media screen and (max-width: 360px) {
+
+        #catpicturetext {
+            font-size: 8.125pt;
+        }
+    }
+
+    #science-to-software {
+        margin-bottom: 4rem;
+    }
+
+    .section-underline-major {
+        text-underline-offset: 5px;
+    }
+
+    #work-experience {
+        margin-bottom: 21.3333px;
+    }
+
+    .experience-separator {
+        margin: 3rem;
+    }
+
+    .section-separator {
+        margin: 4rem;
+    }
+
+    #testseparator {
+        margin-top: 500px;
+    }
+
+    .work-outer-span {
+        font-weight: bold;
+    }
+
+    .work-inner-span {
+        font-weight: normal;
+    }
+
+    .work-inner-note {
+        opacity: 0.55
+    }
+
+    #thrivent-engjob {
+        margin-top: 0;
+    }
+
+    #timeline {
+
+    }
+
+    .timeline {
+            position: relative;
+            height: 925px;
+            margin: 0px auto;
+            margin-left: -10px;
+            width: 2px;
+            background-color: #333
+        }
+
+        .dot {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: #000000;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .dot:nth-child(3) {
+            margin-top: 25px; /* Adjust the distance from the top for the second dot */
+        }
+
+        .experience {
+            white-space: nowrap;
+            display: inline-block;
+            max-width: 40rem;
+            margin: -32px 20px 20px;
+        }
+
+        .experience h3 {
+            margin: 5px 0;
+            text-align: left;
+        }
+
+        .experience p {
+            margin: 0;
+            color: solid white; /* Color of the description text */
+            margin: -5px 0px 0px;
+        }
+
+        .image-container {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        .image-row {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .work-badge {
+            margin: 5px;
+            height: 30px;
+            width: auto;
+        }
+
 /* Projects Section */
 
     span.frac-calc-progress-text {
@@ -1643,65 +1795,7 @@ input, select, textarea {
         }
     }
 
-/* Work Experience Section */
 
-    .timeline {
-        position: relative;
-        height: 925px;
-        margin: 50px auto;
-        margin-left: 5px;
-        width: 2px;
-        background-color: #333
-    }
-
-    .dot {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 20px;
-        height: 20px;
-        background-color: #000000;
-        border-radius: 50%;
-        border: 2px solid white;
-    }
-
-    .dot:nth-child(3) {
-        margin-top: 25px; /* Adjust the distance from the top for the second dot */
-    }
-
-    .experience {
-        white-space: nowrap;
-        display: inline-block;
-        max-width: 900px;
-        margin: -32px 20px 20px;
-    }
-
-    .experience h3 {
-        margin: 5px 0;
-        text-align: left;
-    }
-
-    .experience p {
-        margin: 0;
-        color: solid white; /* Color of the description text */
-        margin: -5px 0px 0px;
-    }
-
-    .image-container {
-        max-width: 100%;
-        overflow-x: auto;
-    }
-
-    .image-row {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-
-    .work-badge {
-        margin: 5px;
-        height: 30px;
-        width: auto;
-    }
 
 /* Footer */
 
@@ -1739,3 +1833,4 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
