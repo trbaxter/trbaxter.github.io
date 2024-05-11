@@ -5,134 +5,151 @@ html, body {
     overflow: auto;
 }
 
-.body {
-    position: relative;
-}
+/* Text Configuration */
 
-.background {
-    width: 100vw;
-    height: 100vh;
-    background: #F5F5F5;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: 0.5s;
-}
+    .black-text {
+        font-family: Times New Roman;
+        scale: 0.9;
+    }
 
-label {
-    width: 93.75px;
-    height: 37.5px;
-    position: fixed;
-    top: 20px;
-    right: 40px;
-    display: block;
-    background: #ebebeb;   /* Background of the slider with lightmode on */
-    border-radius: 37.5px;
-    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
-    cursor: pointer;
-    transition: 0.5s;
-    z-index: 999;
-}
+    input:checked + label ~ .content .black-text {
+        color: #F5F5F5; /* Dark-Mode text color */
+    }
 
-label:after {
-    content: "";
-    width: 33.75px;
-    height: 33.75px;
-    position: absolute;
-    top: 1.875px;
-    left: 1.875px;
-    background: linear-gradient(180deg, #ffcc89, #d8860b);    /* Color of slider button when lightmode is on */
-    border-radius: 33.75px;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-    transition: 0.5s;
-}
+    .horizontal-separator {
+        width: 61.5%;
+        margin-left: 100px;
+    }
 
-input {
-    width: 0;
-    height: 0;
-    visibility: hidden;
-}
 
-input[type=checkbox]:checked + label {
-    color: white;
-}
+/* Slider Configuration */
 
-input:checked + label {
-    background: #02a4fc;   /* Background of the slider */
-}
+    label {
+        width: 93.75px;
+        height: 37.5px;
+        position: fixed;
+        top: 20px;
+        right: 40px;
+        display: block;
+        background: #ebebeb;   /* Background of the slider with Light-Mode on */
+        border-radius: 37.5px;
+        box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+        cursor: pointer;
+        transition: 0.75s;
+        z-index: 999;
+    }
 
-input:checked + label:after {
-    left: 91.875px;
-    transform: translateX(-100%);
-    background: #ebebeb;    /* Color of the button when darkmode is on */
-}
+    label:after {
+        content: "";
+        width: 33.75px;
+        height: 33.75px;
+        position: absolute;
+        top: 1.875px;
+        left: 1.875px;
+        background: linear-gradient(180deg, #ffcc89, #d8860b);    /* Color of slider button when Light-Mode is on */
+        border-radius: 33.75px;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+        transition: 0.75s;
+    }
 
-input:checked + label + .background {
-    background: #242424;    /* Background when darkmode is on */
-}
+    input:checked + label {
+        background: #02a4fc;   /* Dark-Mode slider background */
+    }
 
-.black-text {
-    color: #000; /* Default black color for light mode */
-    font-family: Times New Roman;
-    scale: 0.9;
-}
+    input:checked + label:after {
+        left: 91.875px;
+        transform: translateX(-100%);
+        background: #ebebeb;    /* Color of the button when Dark-Mode is on */
+    }
 
-input:checked + label ~ .content .black-text {
-    color: #F5F5F5; /* Color for dark mode */
-}
 
-a {
-    color: #0066cc; /* Default color of hyperlinks */
-    text-decoration: none; /* Removes hyperlink underline */
-}
+/* Background Configuration */
 
-a:hover {
-    color: #0044cc; /* Color on hover */
-}
+    .background {
+        width: 100vw;
+        height: 100vh;
+        background: #F5F5F5;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: 0.75s;
+    }
 
-a:visited {
-    color: #purple; /* Color of visited links */
-}
+    input:checked + label + .background {
+        background: #141414;    /* Background when Dark-Mode is on */
+    }
 
-input:checked + label ~ .content a {
-    color: #02a4fc; /* Color for hyperlinks when in dark mode */
-}
 
-input:checked + label ~ .content a:hover {
-    color: #0383ad; /* Color for hyperlinks when in dark mode */
-}
+/* Body Configuration */
 
-.sun {
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    top: 6px;
-    right: 62px;
-    z-index: 100;
-}
+    .body {
+        position: relative;
+    }
 
-.moon {
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    top: 6px;
-    right: 6px;
-    z-index: 100;
-    opacity: .25
-}
 
-input:checked + label .moon {
-    opacity: 1; /* Color for moon symbol when in dark mode */
-    transition: 0.5s;
-}
+/* Checkbox Configuration */
 
-input:checked + label .sun {
-    opacity: .25; /* Color for moon symbol when in dark mode */
-    transition: 0.5s;
-}
+    input {                     /* Checkbox */
+        width: 0;
+        height: 0;
+        visibility: hidden;     /* Hides the checkbox */
+    }
 
-.horizontal-separator {
-    width: 61.5%;
-    margin-left: 100px;
-}
+
+/* Hyperlink Configuration */
+
+    a {
+        color: #0066cc; /* Light-Mode color of hyperlinks */
+        text-decoration: none; /* Removes hyperlink underline */
+    }
+
+    a:hover {
+        color: purple; /* Light-Mode hyperlink hover color */
+        transition: 0.5s;
+    }
+
+    a:visited {
+        color: #purple; /* Light-Mode visited links color */
+    }
+
+    input:checked + label ~ .content a {
+        color: #02a4fc; /* Dark-Mode hyperlink color */
+    }
+
+    input:checked + label ~ .content a:hover {
+        color: #0766eb; /* Dark-Mode hyperlink hover color */
+        transition: 0.5s;
+    }
+
+/* SVG Configuration */
+
+    .sun {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        top: 6px;
+        right: 62px;
+        z-index: 100;
+    }
+
+    .moon {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        top: 6px;
+        right: 6px;
+        z-index: 100;
+        opacity: .25
+    }
+
+    input:checked + label .moon {
+        opacity: 1; /* Dark-Mode moon visibility */
+        transition: 0.75s;
+    }
+
+    input:checked + label .sun {
+        opacity: .25; /* Dark-Mode sun visibility */
+        transition: 0.75s;
+    }
+
