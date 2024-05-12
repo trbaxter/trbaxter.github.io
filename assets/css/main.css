@@ -1641,6 +1641,10 @@ input, select, textarea {
         top: -0.5rem;
     }
 
+    #aboutpagetoresume {
+        margin-top: 2rem;
+    }
+
     @media screen and (max-width: 1680px) {
 
         #catpicturetext {
@@ -1663,7 +1667,7 @@ input, select, textarea {
     }
 
     #science-to-software {
-        margin-bottom: 4rem;
+        margin-bottom: 5rem;
     }
 
     .section-underline-major {
@@ -1680,10 +1684,6 @@ input, select, textarea {
 
     .section-separator {
         margin: 4rem;
-    }
-
-    #testseparator {
-        margin-top: 500px;
     }
 
     .work-outer-span {
@@ -1766,25 +1766,43 @@ input, select, textarea {
 
 /* Projects Section */
 
-    span.frac-calc-progress-text {
-        opacity: 0.5;
-        text-transform: lowercase;
+    #fractional-calc-title-progress {
+        opacity: 0.55;
+        font-size: scale(0.5);
+    }
+
+    #fractional-calc-project-picture {
+        width: 100%;
+        image: url("images/calculusprojectpic.jpg");
+    }
+
+    #overview-separator {
+        margin: 1rem;
+    }
+
+    #calc-project-image-credit {
+        opacity: 65%;
+        font-size: 13pt;
+        position: relative;
+        top: -0.5rem;
+        float: right;
+        margin: 0;
+    }
+
+    #calc-project-status {
+        position: relative;
+        top: 1rem;
     }
 
     .calc-photo-credit {
-        position: relative;
         font-size: 0.75rem;
         opacity: 0.65;
         text-align: right;
+        float: right
     }
 
     span.image.main {
         margin-bottom: 0;
-    }
-
-    .calc-photo-details {
-        display: flex; /* Use flexbox */
-        flex-direction: column; /* Stack elements vertically */
     }
 
     @media screen and (max-width: 768px) {
@@ -1794,6 +1812,38 @@ input, select, textarea {
             font-size: 0.7rem;
         }
     }
+
+    .p-1 {
+        margin-top: -1.25rem;
+    }
+
+    .l-1 {
+        margin-top: 0.25rem;
+    }
+
+    .l-bold {
+        font-weight: bold;
+    }
+
+    .l-norm {
+        font-weight: normal;
+        list-style-type: "-";
+    }
+
+    #inner-l-1 {
+        margin-top: -1.5rem;
+    }
+
+    #inner-l-2 {
+            margin-top: -1.5rem;
+        }
+
+    #wolfram-example {
+            width: 100%;
+            object-fit: cover;
+            margin-top: -1rem;
+            filter: brightness(86%);
+        }
 
 
 
