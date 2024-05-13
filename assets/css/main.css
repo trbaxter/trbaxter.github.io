@@ -1699,6 +1699,7 @@ input, select, textarea {
     }
 
     #mostusedlanguagespicture {
+        margin-top: -0.5rem;
         width: 55%;
     }
 
