@@ -1,1 +1,17 @@
+
+## Filtered Filetypes ##
 *.scss linguist-vendored
+
+## Filtered Directories ##
+assets/js/* linguist-vendored
+assets/sass/* linguist-vendored
+assets/webfonts/* linguist-vendored
+
+## Filtered Specific Files ##
+noscript.css linguist-vendored
+fontawesome-all.min.css linguist-vendored
+styles.css linguist-vendored
+
+
+
+
