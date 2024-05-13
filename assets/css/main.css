@@ -1158,7 +1158,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../images/StarBackground.jpg");
+			background-image: url("../../images/starBackground.jpg");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -1630,10 +1630,6 @@ input, select, textarea {
         margin-top: 0rem;
     }
 
-    #gibhubactivitypicture {
-        width: 100%;
-    }
-
     #catpicturetext {
         opacity: 65%;
         font-size: 13pt;
@@ -1667,7 +1663,7 @@ input, select, textarea {
     }
 
     #science-to-software {
-        margin-bottom: 5rem;
+        margin-bottom: rem;
     }
 
     .section-underline-major {
@@ -1683,7 +1679,7 @@ input, select, textarea {
     }
 
     .section-separator {
-        margin: 4rem;
+        margin: 5rem;
     }
 
     .work-outer-span {
@@ -1698,71 +1694,24 @@ input, select, textarea {
         opacity: 0.55
     }
 
-    #thrivent-engjob {
-        margin-top: 0;
+    #githubpic-container {
+        display: flex;
     }
 
-    #timeline {
-
+    #githubactivitypicture {
+        width: 60%;
+        content: url("https://github-readme-stats.vercel.app/api?username=trbaxter&count_private=true\&theme=radical&show_icons=true.svg");
     }
 
-    .timeline {
-            position: relative;
-            height: 925px;
-            margin: 0px auto;
-            margin-left: -10px;
-            width: 2px;
-            background-color: #333
-        }
+    #mostusedlanguagespicture {
+        height: 181px;
+        content: url("https://github-readme-stats.vercel.app/api/top-langs/?username=trbaxter&size_weight=0.15&count_weight=0.5&layout=compact&theme=vision-friendly-dark")
+    }
 
-        .dot {
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background-color: #000000;
-            border-radius: 50%;
-            border: 2px solid white;
-        }
+    #githubsnake {
 
-        .dot:nth-child(3) {
-            margin-top: 25px; /* Adjust the distance from the top for the second dot */
-        }
-
-        .experience {
-            white-space: nowrap;
-            display: inline-block;
-            max-width: 40rem;
-            margin: -32px 20px 20px;
-        }
-
-        .experience h3 {
-            margin: 5px 0;
-            text-align: left;
-        }
-
-        .experience p {
-            margin: 0;
-            color: solid white; /* Color of the description text */
-            margin: -5px 0px 0px;
-        }
-
-        .image-container {
-            max-width: 100%;
-            overflow-x: auto;
-        }
-
-        .image-row {
-            display: flex;
-            flex-wrap: nowrap;
-        }
-
-        .work-badge {
-            margin: 5px;
-            height: 30px;
-            width: auto;
-        }
+        content: url("/sammorozov/sammorozov/blob/main/assets/github-snake.svg")
+    }
 
 /* Projects Section */
 
