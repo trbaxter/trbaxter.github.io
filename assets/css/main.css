@@ -1705,6 +1705,112 @@ input, select, textarea {
 
 /* Projects Section */
 
+    /* Title Formatting */
+
+    @media screen and (min-width: 601px) {
+
+        #desktop-solar-sail-title {
+            display: block;
+        }
+
+        #mobile-solar-sail-title {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+
+        #desktop-solar-sail-title {
+            display: none;
+        }
+
+        #mobile-project-title {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: 400px) {
+
+        #desktop-microlens-title {
+            display: block;
+        }
+
+        #mobile-microlens-title {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 399px) {
+
+        #desktop-microlens-title {
+            display: none;
+        }
+
+        #mobile-microlens-title {
+            display: block;
+        }
+    }
+
+    @media screen and (min-width: 469px) {
+
+        #desktop-newton-title {
+            display: block;
+        }
+
+        #mobile-newton-title {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 468px) {
+
+        #desktop-newton-title {
+            display: none;
+        }
+
+        #mobile-newton-title {
+            display: block;
+        }
+    }
+
+    /* Publication Subtext Formatting */
+
+    @media screen and (min-width: 576px) {
+
+        #publication-subtext-solar-sail-desktop {
+            opacity: 0.55;
+        }
+
+        #publication-subtext-solar-sail-mobile {
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width: 575px) {
+
+        #publication-subtext-solar-sail-desktop {
+            display: none;
+        }
+
+        #publication-subtext-solar-sail-mobile {
+            text-align: left;
+            opacity: 0.55;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     #solar-sail-pic {
         filter: brightness(0.85);
         width: 100%;
@@ -1718,6 +1824,8 @@ input, select, textarea {
         margin-top: -0.5rem;
         float: right;
     }
+
+
 
     #tractor-beam-pic {
         width: 100%;
@@ -1737,7 +1845,7 @@ input, select, textarea {
 
     .research-object {
         margin-bottom: 5rem;
-        line-height: 1.5;
+        line-height: 1.45;
     }
 
     .laser-retrieval-awards-section {
