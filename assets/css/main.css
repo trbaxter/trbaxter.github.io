@@ -1694,16 +1694,12 @@ input, select, textarea {
         opacity: 0.55
     }
 
-    #githubpic-container {
-        display: flex;
-    }
-
     #githubactivitypicture {
-        width: 60%;
+        width: 80%
     }
 
     #mostusedlanguagespicture {
-        height: 181px;
+        width: 55%;
     }
 
 /* Projects Section */
