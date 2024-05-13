@@ -1773,6 +1773,30 @@ input, select, textarea {
         }
     }
 
+    /* Paragraph Formatting */
+
+    @media screen and (min-width: 588px) {
+
+        #desktop-science-to-software {
+            display: block;
+        }
+
+        #mobile-science-to-software {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 587px) {
+
+        #desktop-science-to-software {
+            display: none;
+        }
+
+        #mobile-science-to-software {
+            display: block;
+        }
+    }
+
     /* Publication Subtext Formatting */
 
     @media screen and (min-width: 576px) {
