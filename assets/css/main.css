@@ -1703,7 +1703,7 @@ input, select, textarea {
         width: 55%;
     }
 
-/* Projects Section */
+/* Research Section */
 
     /* Title Formatting */
 
@@ -1823,17 +1823,7 @@ input, select, textarea {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
+    /* Picture Formatting */
 
     #solar-sail-pic {
         filter: brightness(0.85);
@@ -1892,6 +1882,33 @@ input, select, textarea {
     #dark-matter-pic {
         width: 100%;
     }
+
+/* Projects Section */
+
+
+
+    .project-object-column1 {
+        float: left;
+        width: auto;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .project-object-column2 {
+        float: right;
+        width: 34.5%;
+        overflow: hidden;
+    }
+
+    #york-fullstack-project {
+        float: right;
+    }
+
+    #york-capstone-title {
+        align-text: center;
+    }
+
+
 
 /* Footer */
 
