@@ -1885,27 +1885,48 @@ input, select, textarea {
 
 /* Projects Section */
 
-
-
-    .project-object-column1 {
-        float: left;
-        width: auto;
-        margin: 0;
-        justify-content: center;
+    #york-project-object-row {
+        display: flex;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
     }
 
-    .project-object-column2 {
-        float: right;
-        width: 34.5%;
-        overflow: hidden;
+
+    #york-project-object-column1 {
+        flex: 1;
+        margin-right: 1rem;
+    }
+
+    #york-project-object-column2 {
+        width: auto;
     }
 
     #york-fullstack-project {
-        float: right;
+        max-width: 100%;
+        height: auto;
     }
 
-    #york-capstone-title {
-        align-text: center;
+    #york-project-tech-stack {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+    }
+
+    #york-project-badges {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -0.15rem;
+        margin-bottom: 1.33rem;
+        margin-top: .35rem;
+    }
+
+    .york-badge {
+        height: 1.4rem;
+    }
+
+    @media screen and (max-width: 1680px) {
+        #york-project-object-column2 {
+            display: none; /* Hide the second column on smaller screens */
+        }
     }
 
 
