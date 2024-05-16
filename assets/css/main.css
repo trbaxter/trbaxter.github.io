@@ -1986,16 +1986,14 @@ input, select, textarea {
         cursor: pointer;
     }
 
-    .custom-details[open] summary ~ * {
+    details[open] summary ~ * {
       animation: open .7s
     }
 
-    /* closing class */
-    .custom-details.closing summary ~ * {
+    details.closing summary ~ * {
       animation: close .7s
     }
 
-    /* closing animation */
     @keyframes close {
         0% { opacity: 1; }
       100% { opacity: 0; }
