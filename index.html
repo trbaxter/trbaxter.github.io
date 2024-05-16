@@ -6,6 +6,7 @@
     <meta content="my portfolio page" contenteditable="false" name="Tyler Baxter">
     <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
     <link href="assets/css/main.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <noscript>
         <link href="assets/css/noscript.css" rel="stylesheet"/>
     </noscript>
@@ -190,16 +191,16 @@
                 </div>
             </div>
 
-            <div>
-                <h3 id="york-project-overview-title">Project Overview</h3>
+            <details class="custom-details">
+                <summary class="york-project-subsection">&nbsp; Project Overview</summary>
                 <p>
-                    Allows users to register, login, and logout, as well as perform CRUD (create/read/update/delete)
+                    Allows users to register, login, and logout, as well as perform CRUD (Create/Read/Update/Delete)
                     operations on topic threads to foster online discussion.
                 </p>
-            </div>
+            </details>
 
-            <div id="york-project-frontend-technologies-section">
-                <h3 id="york-project-frontend-technologies-title">Front-End Technologies & Purposes</h3>
+            <details class="custom-details">
+                <summary class="york-project-subsection">&nbsp; Front-end Tech Stack & Purposes</summary>
                 <p>
                     <img alt="CSS"
                          class="york-project-badge"
@@ -252,7 +253,67 @@
                 <p class="york-paragraph1-inner">
                     <b>Bootstrap</b>: Used for quick CSS templating of input forms and buttons.
                 </p>
-            </div>
+            </details>
+
+
+
+
+
+<!--            <div id="york-project-frontend-technologies-section">-->
+<!--                <h3 id="york-project-frontend-technologies-title">Front-End Technologies & Purposes</h3>-->
+<!--                <p>-->
+<!--                    <img alt="CSS"-->
+<!--                         class="york-project-badge"-->
+<!--                         src="https://img.shields.io/badge/CSS-1572B6-->
+<!--                              ?logo=css3&color=black&logoColor=1572B6&style=flat"-->
+<!--                    />-->
+<!--                    <img alt="HTML"-->
+<!--                         height="30"-->
+<!--                         src="https://img.shields.io/badge/HTML-E34F26-->
+<!--                              ?logo=html5&color=black&logoColor=E34F26&style=flat"-->
+<!--                    />-->
+<!--                    <img alt="JavaScript"-->
+<!--                         class="york-project-badge"-->
+<!--                         src="https://img.shields.io/badge/JavaScript-F7DF1E-->
+<!--                              ?logo=javascript&color=black&logoColor=F7DF1E&style=flat"-->
+<!--                    />-->
+<!--                    <img alt="React"-->
+<!--                         class="york-project-badge"-->
+<!--                         src="https://img.shields.io/badge/React-61DAFB-->
+<!--                              ?logo=react&color=black&logoColor=61DAFB&style=flat"-->
+<!--                    />-->
+<!--                    <img alt="Redux"-->
+<!--                         class="york-project-badge"-->
+<!--                         src="https://img.shields.io/badge/Redux-593D88-->
+<!--                              ?logo=redux&color=black&logoColor=764ABC&style=flat"-->
+<!--                    />-->
+<!--                    <img alt="Bootstrap"-->
+<!--                         class="york-project-badge"-->
+<!--                         src="https://img.shields.io/badge/Bootstrap-563D7C-->
+<!--                              ?logo=bootstrap&color=black&logoColor=7952B3&style=flat"-->
+<!--                    />-->
+<!--                </p>-->
+<!--                <p id="york-frontend-paragraph1">-->
+<!--                    <b>CSS</b>: General-purpose appearance modification.-->
+<!--                </p>-->
+
+<!--                <p class="york-paragraph1-inner">-->
+<!--                    <b>HTML</b>: Used to host the webpage design and contain the JavaScript.-->
+<!--                </p>-->
+
+<!--                <p class="york-paragraph1-inner">-->
+<!--                    <b>JavaScript</b>: Used in conjunction with React to drive application logic. <br/>-->
+<!--                    (e.g. State-Reducer model)-->
+<!--                </p>-->
+
+<!--                <p class="york-paragraph1-inner">-->
+<!--                    <b>Redux</b>: Controller for managing application state and state changes.-->
+<!--                </p>-->
+
+<!--                <p class="york-paragraph1-inner">-->
+<!--                    <b>Bootstrap</b>: Used for quick CSS templating of input forms and buttons.-->
+<!--                </p>-->
+<!--            </div>-->
 
             <div id="york-project-backend-technologies-section">
                 <h3 id="york-project-backend-technologies-title">Back-End Technologies & Purposes</h3>
@@ -307,27 +368,100 @@
                 </p>
             </div>
 
-            <div id="york-problem-statement-section">
+            <div id="york-problem-assignment-statement-section">
+                <h3 id="york-project-assignment-statement-title">Assignment Statement</h3>
 
+                <p>
+                   Develop a functional full stack web application using the specified tech stack to demonstrate
+                    proficiency in building robust, secure, and scalable web solutions.
+                </p>
+                <p style="margin-top: -1rem;">Required features:</p>
+                <div style="margin-top: -1.6rem; width: 75%;">
+
+                    <ol>
+                        <li>
+                            <b>User Authentication</b>
+                            <ul>
+                                <li class="problem-statement-list-inner">
+                                    Design a main sign-in page allowing a user to sign up by creating
+                                    a username and password.
+                                </li>
+
+                                <li class="problem-statement-list-inner">
+                                    Implement user authentication functionality by enabling users to log
+                                    in with their credentials.
+                                </li>
+
+                                <li class="problem-statement-list-bottom">
+                                    Prevent further access into the application without properly identified credentials.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <b>Data Persistence</b>
+                            <ul>
+                                <li class="problem-statement-list-inner">
+                                    Store user information securely in the PostgreSQL database for future retrieval.
+                                </li>
+
+                                <li class="problem-statement-list-bottom">
+                                    Assign a unique UUID to each user account for identification purposes.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <b>User Interaction</b>
+                            <ul>
+                                <li class="list-project-inner">
+                                    Enable logged-in users to perform CRUD operations on the application state.
+                                </li>
+
+                                <li class="list-project-inner">
+                                    Ensure that changes made by users persist even after logout and are
+                                    visible to other users upon login.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <b>User Interface</b>
+                            <ul>
+                                <li class="list-project-inner">
+                                    Define the user interface using JavaScript, ensuring that HTML is generated
+                                    dynamically through JavaScript functions.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <b>Dependency Restriction</b>
+                            <ul>
+                                <li class="list-project-inner">
+                                    Strictly adhere to the specified tech stack; no additional dependencies are allowed.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
             </div>
 
             <hr>
 
-            <div id="monte-carlo-object-row">
+<!--            <div id="monte-carlo-object-row">-->
 
-                <div id="monte-carlo-object-column1">
-                    <h3>Monte Carlo Pi Approximation Simulator</h3>
-                    My submission for the final assignment in the York Solutions Java Full Stack Apprenticeship
-                    program. This project is a Reddit-like social forum platform for users to create threads and engage
-                    in discussions. <br/><br/>
-                    For a visual tour, click <a href="#york-project-tour">here</a>.<br/> <br/>
-                </div>
+<!--                <div id="monte-carlo-object-column1">-->
+<!--                    <h3>Monte Carlo Pi Approximation Simulator</h3>-->
+<!--                     <br/><br/>-->
+<!--                    For a visual tour, click <a href="#york-project-tour">here</a>.<br/> <br/>-->
+<!--                </div>-->
 
-                <div id="monte-carlo-object-column2">
+<!--                <div id="monte-carlo-object-column2">-->
 
-                </div>
+<!--                </div>-->
 
-            </div>
+<!--            </div>-->
 
         </article>
 
@@ -679,6 +813,7 @@
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/sweep-out.js"></script>
 
 </body>
 </html>
