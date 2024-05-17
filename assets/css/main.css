@@ -1613,14 +1613,25 @@ input, select, textarea {
 
 /* About Section */
 
-    #about-intro {
-        margin-bottom: 0px;
-        white-space: pre-line;
+    @media screen and (min-width: 410px) {
+
+        #about-me-intro {
+            display: block;
+        }
+
+        #about-me-intro-mobile {
+            display: none;
+        }
     }
 
-    @media (max-width: 460px) {
-        #about-intro {
-            white-space: normal;
+    @media screen and (max-width: 409px) {
+
+        #about-me-intro {
+            display: none;
+        }
+
+        #about-me-intro-mobile {
+            display: block;
         }
     }
 
