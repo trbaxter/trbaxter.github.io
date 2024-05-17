@@ -2004,7 +2004,33 @@ input, select, textarea {
           100% { opacity: 1; }
     }
 
+    #york-project-signin-page {
+        width: 100%;
+    }
 
+    #york-project-signin-page:hover {
+        -webkit-transition: all .3s ease-in;
+          -moz-transition: all .3s ease-in;
+          -ms-transition: all .3s ease-in;
+          -o-transition: all .3s ease-in;
+          transition: all .3s ease-in;
+          opacity: 1;
+          transform: scale(1);
+          -ms-transform: scale(2); /* IE 9 */
+          -webkit-transform: scale(2); /* Safari and Chrome */
+    }
+
+    #york-project-signin-page:not(:hover) {
+         -webkit-transition: all .3s ease-in;
+          -moz-transition: all .3s ease-in;
+          -ms-transition: all .3s ease-in;
+          -o-transition: all .3s ease-in;
+          transition: all .3s ease-in;
+          opacity: 1;
+          transform: scale(1);
+          -ms-transform: scale(1); /* IE 9 */
+          -webkit-transform: scale(1); /* Safari and Chrome */
+     }
 
 
 
