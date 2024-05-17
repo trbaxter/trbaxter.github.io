@@ -1850,6 +1850,10 @@ input, select, textarea {
         float: right;
     }
 
+    .first-details-spacer {
+        margin-top: 1.5rem;
+    }
+
 
 
     #tractor-beam-pic {
@@ -2013,8 +2017,9 @@ input, select, textarea {
         line-height: 1.5;
         margin: 0 0 1rem 0;
         text-transform: uppercase;
-        letter-spacing: 0.15rem;
+        letter-spacing: 0.1rem;
         cursor: pointer;
+        font-size: 0.9rem;
     }
 
     details[open] summary ~ * {
