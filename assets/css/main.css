@@ -2032,15 +2032,34 @@ input, select, textarea {
           -webkit-transform: scale(1); /* Safari and Chrome */
      }
 
-
-
-
-
     @media screen and (max-width: 1680px) {
         #york-project-object-column2 {
             display: none; /* Hide the second column on smaller screens */
         }
     }
+
+    @media screen and (max-width: 1680px) {
+        #york-login-video {
+            width: 75%;
+            height: 75%;
+        }
+    }
+
+    @media screen and (max-width: 736px) {
+        #york-login-video {
+            width: 68.75%;
+            height: 68.75%;
+        }
+    }
+
+    @media screen and (max-width: 360px) {
+        #york-login-video {
+            width: 62.5%;
+            height: 62.5%;
+        }
+    }
+
+
 
 
 
