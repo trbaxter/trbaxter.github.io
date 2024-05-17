@@ -1963,6 +1963,26 @@ input, select, textarea {
         height: 30px;
     }
 
+    @media screen and (max-width: 1680px) {
+        .york-project-badge {
+            height: 22.5px;
+        }
+    }
+
+    @media screen and (max-width: 736px) {
+
+        .york-project-badge {
+            height: 20.625px;
+        }
+    }
+
+    @media screen and (max-width: 360px) {
+        .york-project-badge {
+            height: 18.75px;
+        }
+    }
+
+
     #york-frontend-paragraph1 {
         margin-top: -1.5rem;
         font-size: 90%;
@@ -1987,7 +2007,7 @@ input, select, textarea {
         margin-bottom: -0.35rem;
     }
 
-    .york-project-subsection {
+    .details-subsection-header {
         color: #ffffff;
         font-weight: 600;
         line-height: 1.5;
