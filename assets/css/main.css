@@ -1837,7 +1837,7 @@ input, select, textarea {
     /* Picture Formatting */
 
     #solar-sail-pic {
-        filter: brightness(0.85);
+        filter: brightness(0.95);
         width: 100%;
     }
 
