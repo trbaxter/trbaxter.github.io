@@ -1364,6 +1364,11 @@ input, select, textarea {
 						background-color: rgba(255, 255, 255, 0.175);
 					}
 
+        nav.use-middle:before {
+            opacity: 0 !important;
+            pointer-events: none;
+        }
+
 		#header nav.use-middle:after  {
 			content: '';
 			display: block;
