@@ -1613,38 +1613,40 @@ input, select, textarea {
 
 /* Section for role-by-role appearance on main page   */
 
+/* Role reveal timing knobs */
 :root {
-  --roles-start: 1300ms; /* wait for initial hero animation */
-  --roles-gap: 1000ms;   /* 1s between lines */
+  --roles-offset: 800ms; /* start delay after preload ends */
+  --roles-gap: 0.9s;       /* time between each role */
 }
 
-#header .roles .role{
-  display:block;
-  opacity:0;
-  transform:translateY(6px);
-  will-change:opacity, transform;
+/* Fade/slide each role once */
+#header .roles .role {
+  opacity: 0;
+  will-change: opacity, transform;
+  animation: role-in 1600ms ease forwards;
 }
 
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(6px); }
-  to   { opacity:1; transform:none; }
+#header .roles .role:nth-child(1) {
+  animation-delay: var(--roles-offset);
+}
+#header .roles .role:nth-child(2) {
+  animation-delay: calc(var(--roles-offset) + var(--roles-gap));
+}
+#header .roles .role:nth-child(3) {
+/* offset + 2*gap (addition repeated because calc() can’t multiply times) */
+  animation-delay: calc(var(--roles-offset) + var(--roles-gap) + var(--roles-gap));
 }
 
-/* kick off only after we add .roles-start to <body> */
-body.roles-start #header .roles .role{
-  animation: fadeUp 450ms ease-out forwards;
+@keyframes role-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-body.roles-start #header .roles .role:nth-of-type(1){ animation-delay: var(--roles-start); }
-body.roles-start #header .roles .role:nth-of-type(2){ animation-delay: calc(var(--roles-start) + var(--roles-gap)); }
-body.roles-start #header .roles .role:nth-of-type(3){ animation-delay: calc(var(--roles-start) + 2*var(--roles-gap)); }
 
-/* After first run, freeze roles (no re-animations) */
-body.roles-done #header .roles .role{
-  animation: none !important;
-  opacity: 1 !important;
-  transform: none !important;
-}
+
+
+
+
 
 /* Keep cool blur on the header, but no scaling = no vertical nudge */
 body.is-article-visible #header {
