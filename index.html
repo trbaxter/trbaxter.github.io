@@ -1,170 +1,219 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-    <title>Tyler Baxter Portfolio</title>
-    <meta charset="UTF-8"/>
-    <meta content="my portfolio page" contenteditable="false" name="Tyler Baxter">
-    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport"/>
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <noscript>
-        <link href="assets/css/noscript.css" rel="stylesheet"/>
-    </noscript>
+  <title>Tyler Baxter Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta content="my portfolio page"
+        contenteditable="false"
+        name="Tyler Baxter">
+  <meta content="width=device-width, initial-scale=1.0, user-scalable=no"
+        name="viewport" />
+  <link href="assets/css/main.css" rel="stylesheet" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <noscript>
+    <link href="assets/css/noscript.css" rel="stylesheet" />
+  </noscript>
 </head>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const inner = document.querySelector('#header .content .inner');
+    const roles = document.querySelectorAll('#header .roles .role');
+
+    const start = () => {
+      if (document.body.classList.contains('roles-start') ||
+        document.body.classList.contains('roles-done')) return;
+      document.body.classList.add('roles-start');
+    };
+
+    // Mark done after the last role finishes its animation
+    if (roles.length) {
+      roles[roles.length - 1].addEventListener('animationend', () => {
+        document.body.classList.remove('roles-start');
+        document.body.classList.add('roles-done');
+      }, { once: true });
+    }
+
+    // Kick off once, after the header’s initial expand
+    if (inner) {
+      inner.addEventListener('transitionend', e => {
+        if (e.propertyName === 'max-height') start();
+      }, { once: true });
+    }
+    setTimeout(start, 1600); // fallback
+  });
+</script>
+
+
+
+
 <body class="is-preload">
 
-<!-- Wrapper -->
 <div id="wrapper">
 
-    <!-- Header -->
-    <header id="header">
-        <div class="content">
-            <div class="inner">
-                <h1>Tyler Baxter</h1>
-                <p>Junior Software Engineer</p>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header id="header">
+    <div class="content">
+      <div class="inner">
+        <h1>Tyler Baxter</h1>
+        <p class="roles">
+          <span class="role">Software Engineer</span>
+          <span class="role">Data Engineer</span>
+          <span class="role">Data Analyst</span>
+        </p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+
+      </ul>
+    </nav>
+  </header>
 
 
-
-    <!-- Main -->
-    <div id="main">
+  <div id="main">
 
 
+    <article id="about">
 
-        <!-- About -->
-        <article id="about">
+      <h2 class="major">About Me</h2>
 
-            <h2 class="major">About Me</h2>
+      <p id="about-me-intro">
+        Hi, I'm Tyler Baxter. Thanks for checking out my portfolio! <br>
+        I'm a military veteran, physics nerd, gamer, and spoiled cat owner.
+      </p>
 
-            <p id="about-me-intro">
-                Hi, I'm Tyler Baxter. Thanks for checking out my portfolio! <br>
-                I'm a military veteran, physics nerd, gamer, and spoiled cat owner.
-            </p>
+      <p id="about-me-intro-mobile">
+        Hi, I'm Tyler Baxter. Thanks for checking out my portfolio!
+        I'm a military veteran, physics nerd, gamer, and spoiled cat owner.
+      </p>
 
-            <p id="about-me-intro-mobile">
-                Hi, I'm Tyler Baxter. Thanks for checking out my portfolio!
-                I'm a military veteran, physics nerd, gamer, and spoiled cat owner.
-            </p>
+      <img alt="Cat Picture"
+           id="catpicture"
+           src="images/cat-scaled.jpg"
+      />
 
-            <img alt="Cat Picture"
-                 id="catpicture"
-                 src="images/cat-scaled.jpg"
-            />
+      <p id="catpicturetext">
+        (Don't be fooled by the angelic appearance.)
+      </p>
 
-            <p id="catpicturetext">
-                (Don't be fooled by the angelic appearance.)
-            </p>
+      <h3><u class="section-underline-major">From Science to Software
+        Engineering</u></h3>
 
-            <h3><u class="section-underline-major">From Science to Software Engineering</u></h3>
+      <p id="desktop-science-to-software" style="margin-bottom: 3rem;">
+        During my undergrad, I was heavily involved in extracurricular
+        scientific research. <br />
+        My projects spanned the subjects of astrophysics, laser ablation, and
+        material science. <br />
+        Click <a href="#research">here</a> to learn more.
+        <br /><br />
+        After graduating, I became eager to find somewhere new to put my skills
+        and passion for learning
+        new things to good use. Since then, I've discovered that joining the
+        world of software engineering
+        was exactly what I was looking for.
+      </p>
 
-            <p id="desktop-science-to-software" style="margin-bottom: 3rem;">
-                During my undergrad, I was heavily involved in extracurricular scientific research. <br/>
-                My projects spanned the subjects of astrophysics, laser ablation, and material science. <br/>
-                Click <a href="#research">here</a> to learn more.
-                <br/><br/>
-                After graduating, I became eager to find somewhere new to put my skills and passion for learning
-                new things to good use. Since then, I've discovered that joining the world of software engineering
-                was exactly what I was looking for.
-            </p>
+      <p id="mobile-science-to-software" style="margin-bottom: 3rem;">
+        During my undergrad, I was heavily involved in extracurricular
+        scientific research.
+        My projects spanned the subjects of astrophysics, laser ablation, and
+        material science.
+        Click <a href="#research">here</a> to learn more.
+        <br /><br />
+        After graduating, I became eager to find somewhere new to put my skills
+        and passion for learning
+        new things to good use. Since then, I've discovered that joining the
+        world of software engineering
+        was exactly what I was looking for.
+      </p>
 
-            <p id="mobile-science-to-software" style="margin-bottom: 3rem;">
-                During my undergrad, I was heavily involved in extracurricular scientific research.
-                My projects spanned the subjects of astrophysics, laser ablation, and material science.
-                Click <a href="#research">here</a> to learn more.
-                <br/><br/>
-                After graduating, I became eager to find somewhere new to put my skills and passion for learning
-                new things to good use. Since then, I've discovered that joining the world of software engineering
-                was exactly what I was looking for.
-            </p>
+      <h3><u class="section-underline-major">My 2024 GitHub Activity</u></h3>
 
-            <h3><u class="section-underline-major">My 2024 GitHub Activity</u></h3>
-
-            <div id="github-picture-container">
-                <img alt="GitHub activity image"
-                     id="githubactivitypicture"
-                     src="https://github-readme-stats.vercel.app/api?username=trbaxter&count_private=true\
+      <div id="github-picture-container">
+        <img alt="GitHub activity image"
+             id="githubactivitypicture"
+             src="https://github-readme-stats.vercel.app/api?username=trbaxter&count_private=true\
                           &theme=radical&show_icons=true"
-                />
-                <img alt="Most used languages image"
-                     id="mostusedlanguagespicture"
-                     src="https://github-readme-stats.vercel.app/api/top-langs/?username=trbaxter&size_weight=0.15&count_weight=0.5&layout=compact&theme=vision-friendly-dark&hide=scss"
-                />
-            </div>
-        </article>
+        />
+        <img alt="Most used languages image"
+             id="mostusedlanguagespicture"
+             src="https://github-readme-stats.vercel.app/api/top-langs/?username=trbaxter&size_weight=0.15&count_weight=0.5&layout=compact&theme=vision-friendly-dark&hide=scss"
+        />
+      </div>
+    </article>
 
 
+    <!-- Projects -->
+    <article id="projects">
 
-        <!-- Projects -->
-        <article id="projects">
+      <h2 class="major">Projects</h2>
 
-            <h2 class="major">Projects</h2>
+      <!-- Fractional Calculus Computation API -->
+      <div class="fractional-calculus-project">
+        <h3>Fractional Calculus Computation API</h3>
+      </div>
 
-            <!-- Fractional Calculus Computation API -->
-            <div class="fractional-calculus-project">
-                <h3>Fractional Calculus Computation API</h3>
-            </div>
+      <img alt="Calculus Image"
+           id="fractional-calculus-project-picture"
+           src="images/calc-project-picture.jpg"
+           style="object-fit: cover; object-position: center;"
+      />
 
-            <img alt="Calculus Image"
-                 id="fractional-calculus-project-picture"
-                 src="images/calc-project-picture.jpg"
-                 style="object-fit: cover; object-position: center;"
-            />
-
-            <span class="project-image-credit">
+      <span class="project-image-credit">
                         Photo: Vergilius Eremite
             </span>
 
-            <p style="margin-top: 1.25rem;">
-                This API provides closed-form expressions for derivatives and integrals of polynomials.
-            </p>
+      <p style="margin-top: 1.25rem;">
+        This API provides closed-form expressions for derivatives and integrals
+        of polynomials.
+      </p>
 
-            <div style="margin-top: -1.5rem;">
-                Key Features:
-                <ul>
-                    <li>
-                        Works for standard integer-order calculus operations.
-                    </li>
-                    <li>
-                        Users may also request fractional-order derivatives and integrals if desired.
-                    </li>
-                </ul>
-            </div>
+      <div style="margin-top: -1.5rem;">
+        Key Features:
+        <ul>
+          <li>
+            Works for standard integer-order calculus operations.
+          </li>
+          <li>
+            Users may also request fractional-order derivatives and integrals
+            if desired.
+          </li>
+        </ul>
+      </div>
 
-            <div style="margin-top: -1.5rem;">
-                For more details, please visit the project
-                <a href="https://github.com/trbaxter/fractional-calculus-computation-api" target="_blank">
-                GitHub repository</a>.
-            </div>
+      <div style="margin-top: -1.5rem;">
+        For more details, please visit the project
+        <a href="https://github.com/trbaxter/fractional-calculus-computation-api"
+           target="_blank">
+          GitHub repository</a>.
+      </div>
 
-        </article>
+    </article>
 
 
-         <!-- Research -->
-        <article id="research">
+    <!-- Research -->
+    <article id="research">
 
-            <h2 class="major">Research</h2>
+      <h2 class="major">Research</h2>
 
-            <!-- Solar Sail Research -->
-            <div class="research-object">
-                <h3 id="desktop-solar-sail-title">Assessment of an Interstellar <br>  Photon Propulsion Concept</h3>
-                <h3 id="mobile-solar-sail-title">Assessment of an Interstellar Photon Propulsion Concept</h3>
+      <!-- Solar Sail Research -->
+      <div class="research-object">
+        <h3 id="desktop-solar-sail-title">Assessment of an Interstellar <br>
+          Photon Propulsion Concept</h3>
+        <h3 id="mobile-solar-sail-title">Assessment of an Interstellar Photon
+          Propulsion Concept</h3>
 
-                <img alt="Solar Sail Image"
-                     id="solar-sail-pic"
-                     src="images/solarsailprojectpic.jpg"
-                />
+        <img alt="Solar Sail Image"
+             id="solar-sail-pic"
+             src="images/solarsailprojectpic.jpg"
+        />
 
-                <span class="project-image-credit">
+        <span class="project-image-credit">
                         Photo: St. Cloud State University/
                         <a href="https://web.stcloudstate.edu/jesinko/"
                            target="_blank">
@@ -172,260 +221,300 @@
                         </a>
                 </span>
 
-                <p style="margin-top: 1.5rem;">
-                    This research project explored the theoretical performance of a solar sail using a spherical
-                    configuration for purposes of interstellar travel.
-                </p>
+        <p style="margin-top: 1.5rem;">
+          This research project explored the theoretical performance of a solar
+          sail using a spherical
+          configuration for purposes of interstellar travel.
+        </p>
 
 
-                <details>
-                    <summary class="details-subsection-header">&nbsp; Publications</summary>
-                    <p>
-                        Sinko, J. E., Baxter T. (2015).<br>
-                        Assessment of an Interstellar Photon Propulsion Concept.<br>
-                        <i id="publication-subtext-solar-sail-desktop">
-                            Proceedings of the Joint Conference of 30th International Symposium <br/>
-                            on Space Technology and Science, 34th International Electric Propulsion Conference, <br/>
-                            and 6th Nano-satellite Symposium. Hyogo-Kobe, Japan.<br/>
-                        </i>
-                        <i id="publication-subtext-solar-sail-mobile">
-                            Proceedings of the Joint Conference of 30th International Symposium
-                            on Space Technology and Science, 34th International Electric Propulsion Conference,
-                            and 6th Nano-satellite Symposium. Hyogo-Kobe, Japan.<br/>
-                        </i>
-                        IEPC:
-                        <a href="http://electricrocket.org/IEPC/IEPC-2015-144_ISTS-2015-b-144.pdf" target="_blank">
-                            2015-144 / ISTS-2015-b-144
-                        </a>
-                    </p>
-                </details>
-            </div>
+        <details>
+          <summary class="details-subsection-header">&nbsp; Publications
+          </summary>
+          <p>
+            Sinko, J. E., Baxter T. (2015).<br>
+            Assessment of an Interstellar Photon Propulsion Concept.<br>
+            <i id="publication-subtext-solar-sail-desktop">
+              Proceedings of the Joint Conference of 30th International
+              Symposium <br />
+              on Space Technology and Science, 34th International Electric
+              Propulsion Conference, <br />
+              and 6th Nano-satellite Symposium. Hyogo-Kobe, Japan.<br />
+            </i>
+            <i id="publication-subtext-solar-sail-mobile">
+              Proceedings of the Joint Conference of 30th International
+              Symposium
+              on Space Technology and Science, 34th International Electric
+              Propulsion Conference,
+              and 6th Nano-satellite Symposium. Hyogo-Kobe, Japan.<br />
+            </i>
+            IEPC:
+            <a href="http://electricrocket.org/IEPC/IEPC-2015-144_ISTS-2015-b-144.pdf"
+               target="_blank">
+              2015-144 / ISTS-2015-b-144
+            </a>
+          </p>
+        </details>
+      </div>
 
-            <!-- Laser Tractor Beam Target Research -->
-            <div class="research-object">
-                <h3>Thrust Assessment for a Laser Tractor Beam Target</h3>
+      <!-- Laser Tractor Beam Target Research -->
+      <div class="research-object">
+        <h3>Thrust Assessment for a Laser Tractor Beam Target</h3>
 
-                <img alt="Tractor Beam Target Picture"
-                     id="tractor-beam-pic"
-                     src="images/tractorbeamprojectpic.jpg"
-                />
+        <img alt="Tractor Beam Target Picture"
+             id="tractor-beam-pic"
+             src="images/tractorbeamprojectpic.jpg"
+        />
 
-                <span class="project-image-credit">
+        <span class="project-image-credit">
                       Photo: St. Cloud State University/Gary Bailey
                 </span>
 
-                <p style="margin-top: 1.5rem;">
-                    This research project was an experimental development of a 'tractor beam' device that could
-                    be used to retrieve adrift astronauts using laser ablation of chemical powders.
-                </p>
+        <p style="margin-top: 1.5rem;">
+          This research project was an experimental development of a 'tractor
+          beam' device that could
+          be used to retrieve adrift astronauts using laser ablation of
+          chemical powders.
+        </p>
 
 
-                <details>
-                    <summary class="details-subsection-header">&nbsp; Awards</summary>
+        <details>
+          <summary class="details-subsection-header">&nbsp; Awards</summary>
 
-                    <p>
-                        $1000 Grant Funding Award (Spring 2015) <br>
-                        <i class="award-subtext">St. Cloud State University</i>
-                    </p>
+          <p>
+            $1000 Grant Funding Award (Spring 2015) <br>
+            <i class="award-subtext">St. Cloud State University</i>
+          </p>
 
-                    <p>
-                        $1000 Grant Funding Award (Fall 2015) <br>
-                        <i class="award-subtext">St. Cloud State University</i>
-                    </p>
+          <p>
+            $1000 Grant Funding Award (Fall 2015) <br>
+            <i class="award-subtext">St. Cloud State University</i>
+          </p>
 
-                    <p>
-                        $1000 Grant Funding Award (Spring 2016) <br>
-                        <i class="award-subtext">St. Cloud State University</i>
-                    </p>
+          <p>
+            $1000 Grant Funding Award (Spring 2016) <br>
+            <i class="award-subtext">St. Cloud State University</i>
+          </p>
 
-                    <p>
-                        $1000 Grant Funding Award (Fall 2016) <br>
-                        <i class="award-subtext">St. Cloud State University</i>
-                    </p>
+          <p>
+            $1000 Grant Funding Award (Fall 2016) <br>
+            <i class="award-subtext">St. Cloud State University</i>
+          </p>
 
-                    <p>
-                        $1000 Grant Funding Award (Spring 2017) <br>
-                        <i class="award-subtext">St. Cloud State University</i>
-                    </p>
-                </details>
+          <p>
+            $1000 Grant Funding Award (Spring 2017) <br>
+            <i class="award-subtext">St. Cloud State University</i>
+          </p>
+        </details>
 
-                <details>
-                    <summary class="details-subsection-header">&nbsp; Presentations</summary>
+        <details>
+          <summary class="details-subsection-header">&nbsp; Presentations
+          </summary>
 
-                    <p>
-                        1st Place Winner - <a href="laserastronautposter.html" target="_blank">
-                        Best Poster Presentation (2016)</a> <br>
-                        <i class="award-subtext">St. Cloud State University Student Research Colloquium</i>
-                    </p>
-                </details>
+          <p>
+            1st Place Winner - <a href="laserastronautposter.html"
+                                  target="_blank">
+            Best Poster Presentation (2016)</a> <br>
+            <i class="award-subtext">St. Cloud State University Student
+              Research Colloquium</i>
+          </p>
+        </details>
 
-                <details>
-                    <summary class="details-subsection-header">&nbsp; Publications</summary>
+        <details>
+          <summary class="details-subsection-header">&nbsp; Publications
+          </summary>
 
-                    <p>
-                        Sinko, J. E., Baxter, T., Gill, M., Schlecht, A. C. (2017).<br>
-                        Thrust Assessment for a Laser Tractor Beam Target. <br>
-                        <i class="award-subtext">Proceedings of the 53rd AIAA/SAE/ASEE Joint Propulsion Conference.
-                            Atlanta, GA.</i> <br>
-                        DOI:
-                        <a href="https://arc.aiaa.org/doi/10.2514/6.2017-4960" target="_blank">
-                            10.2514/6.2017-4960
-                        </a>
-                    </p>
-                </details>
-            </div>
+          <p>
+            Sinko, J. E., Baxter, T., Gill, M., Schlecht, A. C. (2017).<br>
+            Thrust Assessment for a Laser Tractor Beam Target. <br>
+            <i class="award-subtext">Proceedings of the 53rd AIAA/SAE/ASEE
+              Joint Propulsion Conference.
+              Atlanta, GA.</i> <br>
+            DOI:
+            <a href="https://arc.aiaa.org/doi/10.2514/6.2017-4960"
+               target="_blank">
+              10.2514/6.2017-4960
+            </a>
+          </p>
+        </details>
+      </div>
 
-            <!-- Carbonate Propellant Research -->
-            <div class="research-object">
-                <h3>Laser-Induced Carbon-Doped Carbonate Propellant Decomposition for Beamed Energy Propulsion</h3>
+      <!-- Carbonate Propellant Research -->
+      <div class="research-object">
+        <h3>Laser-Induced Carbon-Doped Carbonate Propellant Decomposition for
+          Beamed Energy Propulsion</h3>
 
-                <img alt="Propellant Decomposition Picture"
-                     id="propellant-pic"
-                     src="images/propellantprojectpic.jpg"
-                />
+        <img alt="Propellant Decomposition Picture"
+             id="propellant-pic"
+             src="images/propellantprojectpic.jpg"
+        />
 
-                <span class="project-image-credit">
+        <span class="project-image-credit">
                       Photo: St. Cloud State University/
-                      <a href="https://web.stcloudstate.edu/jesinko/" target="_blank">Dr. John E. Sinko</a>
+                      <a href="https://web.stcloudstate.edu/jesinko/"
+                         target="_blank">Dr. John E. Sinko</a>
                 </span>
 
-                <p style="margin-top: 1.5rem;">
-                    This research project was an experimental optimization of the
-                    chemical powder used in the 'Thrust Assessment for a Laser Tractor Beam Target' project.
-                </p>
+        <p style="margin-top: 1.5rem;">
+          This research project was an experimental optimization of the
+          chemical powder used in the 'Thrust Assessment for a Laser Tractor
+          Beam Target' project.
+        </p>
 
-                <details>
-                    <summary class="details-subsection-header">&nbsp; Awards</summary>
+        <details>
+          <summary class="details-subsection-header">&nbsp; Awards</summary>
 
-                    <p>
-                        $1000 Grant Funding Award (Fall 2016) <br>
-                        <i class="award-subtext">St. Cloud State University</i>
-                    </p>
+          <p>
+            $1000 Grant Funding Award (Fall 2016) <br>
+            <i class="award-subtext">St. Cloud State University</i>
+          </p>
 
-                    <p>
-                        $1000 Grant Funding Award (Spring 2017) <br>
-                        <i class="award-subtext">St. Cloud State University</i>
-                    </p>
-                </details>
+          <p>
+            $1000 Grant Funding Award (Spring 2017) <br>
+            <i class="award-subtext">St. Cloud State University</i>
+          </p>
+        </details>
 
-                <details>
-                    <summary class="details-subsection-header">&nbsp; Presentations</summary>
+        <details>
+          <summary class="details-subsection-header">&nbsp; Presentations
+          </summary>
 
-                    <p>
-                        1st Place Winner - <a href="ncurcommiteepowerpoint.html" target="_blank">
-                        Best Poster Presentation (2017)</a> <br>
-                        <i class="award-subtext">National Council on Undergraduate Research Committee</i>
-                    </p>
+          <p>
+            1st Place Winner - <a href="ncurcommiteepowerpoint.html"
+                                  target="_blank">
+            Best Poster Presentation (2017)</a> <br>
+            <i class="award-subtext">National Council on Undergraduate
+              Research Committee</i>
+          </p>
 
-                    <p>
-                        <a href="propellantpowerpoint.html" target="_blank">
-                            AIAA Conference Submission PowerPoint (2017) <br>
-                        </a>
-                        <i class="award-subtext">AIAA Propulsion and Energy Conference, Atlanta GA</i>
-                    </p>
-                </details>
+          <p>
+            <a href="propellantpowerpoint.html" target="_blank">
+              AIAA Conference Submission PowerPoint (2017) <br>
+            </a>
+            <i class="award-subtext">AIAA Propulsion and Energy Conference,
+              Atlanta GA</i>
+          </p>
+        </details>
 
-                <details>
-                    <summary class="details-subsection-header">&nbsp; Publications</summary>
+        <details>
+          <summary class="details-subsection-header">&nbsp; Publications
+          </summary>
 
-                    <p>
-                        Baxter, T., Sinko, J. (2017). <br>
-                        Laser-Induced Carbon-Doped Carbonate Propellant Decomposition <br> for Beamed Energy Propulsion.
-                        <br>
-                        <i class="award-subtext">Proceedings of the 53rd AIAA/SAE/ASEE Joint Propulsion Conference.
-                        Atlanta, GA.</i> <br>
-                        DOI:
-                        <a href="https://arc.aiaa.org/doi/10.2514/6.2017-4958" target="_blank">
-                            10.2514/6.2017-4958
-                        </a>
-                    </p>
-                </details>
-            </div>
+          <p>
+            Baxter, T., Sinko, J. (2017). <br>
+            Laser-Induced Carbon-Doped Carbonate Propellant Decomposition <br>
+            for Beamed Energy Propulsion.
+            <br>
+            <i class="award-subtext">Proceedings of the 53rd AIAA/SAE/ASEE
+              Joint Propulsion Conference.
+              Atlanta, GA.</i> <br>
+            DOI:
+            <a href="https://arc.aiaa.org/doi/10.2514/6.2017-4958"
+               target="_blank">
+              10.2514/6.2017-4958
+            </a>
+          </p>
+        </details>
+      </div>
 
-            <!-- Microlens Array Research -->
-            <div class="research-object">
-                <h3 id="desktop-microlens-title">Spherical Lens vs. Microlens Array <br> for Laser Propulsion</h3>
-                <h3 id="mobile-microlens-title">Spherical Lens vs. Microlens Array for Laser Propulsion</h3>
+      <!-- Microlens Array Research -->
+      <div class="research-object">
+        <h3 id="desktop-microlens-title">Spherical Lens vs. Microlens Array
+          <br> for Laser Propulsion</h3>
+        <h3 id="mobile-microlens-title">Spherical Lens vs. Microlens Array
+          for Laser Propulsion</h3>
 
-                <img alt="Spherical lens and microlens arrays"
-                     id="microlens-pic"
-                     src="images/projectlensespic.jpg"
-                />
+        <img alt="Spherical lens and microlens arrays"
+             id="microlens-pic"
+             src="images/projectlensespic.jpg"
+        />
 
-                <span class="project-image-credit">
+        <span class="project-image-credit">
                     Photo: St. Cloud State University/Tyler Baxter
                 </span>
 
-                <p style="margin-top: 1.5rem;">
-                    This research project was an experimental development of using microlens arrays with
-                    the previous laser projects to maximize thrust output levels.
-                </p>
+        <p style="margin-top: 1.5rem;">
+          This research project was an experimental development of using
+          microlens arrays with
+          the previous laser projects to maximize thrust output levels.
+        </p>
 
-                <details>
-                    <summary class="details-subsection-header">&nbsp; Awards</summary>
+        <details>
+          <summary class="details-subsection-header">&nbsp; Awards</summary>
 
-                    <p>
-                        $1000 Grant Funding Award (Fall 2017) <br>
-                        <i class="award-subtext">St. Cloud State University</i>
-                    </p>
+          <p>
+            $1000 Grant Funding Award (Fall 2017) <br>
+            <i class="award-subtext">St. Cloud State University</i>
+          </p>
 
-                    <p>
-                        $1000 Grant Funding Award (Spring 2018) <br>
-                        <i class="award-subtext">St. Cloud State University</i>
-                    </p>
+          <p>
+            $1000 Grant Funding Award (Spring 2018) <br>
+            <i class="award-subtext">St. Cloud State University</i>
+          </p>
 
-                    <p>
-                        Certificate of Achievement <br>
-                        <i class="award-subtext">Minnesota Undergraduate Scholars, St. Paul MN</i>
-                    </p>
+          <p>
+            Certificate of Achievement <br>
+            <i class="award-subtext">Minnesota Undergraduate Scholars, St.
+              Paul MN</i>
+          </p>
 
-                    <p>
-                        Certificate of Achievement <br>
-                        <i class="award-subtext">Minnesota Undergraduate Scholars, Rochester MN</i>
-                    </p>
-                </details>
+          <p>
+            Certificate of Achievement <br>
+            <i class="award-subtext">Minnesota Undergraduate Scholars,
+              Rochester MN</i>
+          </p>
+        </details>
 
-                <details>
-                    <summary class="details-subsection-header">&nbsp; Presentations</summary>
+        <details>
+          <summary class="details-subsection-header">&nbsp; Presentations
+          </summary>
 
-                    <p>
-                        1st Place Winner - <a href="microlensprojectposter.html" target="_blank">
-                        Best Poster Presentation (2017)</a> <br>
-                        <i class="award-subtext">National Council on Undergraduate Research Committee</i>
-                    </p>
+          <p>
+            1st Place Winner - <a href="microlensprojectposter.html"
+                                  target="_blank">
+            Best Poster Presentation (2017)</a> <br>
+            <i class="award-subtext">National Council on Undergraduate
+              Research Committee</i>
+          </p>
 
-                    <p>
-                        1st Place Winner - <a href="microlensrochesterpowerpoint.html" target="_blank">
-                        Outstanding Oral Research Presentation (2018)</a> <br>
-                        <i class="award-subtext">7th Annual Minnesota Conference of Undergraduate Scholarly
-                            and Creative Activity
-                        </i>
-                    </p>
+          <p>
+            1st Place Winner - <a href="microlensrochesterpowerpoint.html"
+                                  target="_blank">
+            Outstanding Oral Research Presentation (2018)</a> <br>
+            <i class="award-subtext">7th Annual Minnesota Conference of
+              Undergraduate Scholarly
+              and Creative Activity
+            </i>
+          </p>
 
-                    <p>
-                        <a href="ncurpowerpoint.html" target="_blank">NCUR PowerPoint Submission (2018)</a> <br>
-                        <i class="award-subtext">32nd Annual National Council on Undergraduate Research Conference</i>
-                    </p>
-                </details>
-            </div>
+          <p>
+            <a href="ncurpowerpoint.html" target="_blank">NCUR PowerPoint
+              Submission (2018)</a> <br>
+            <i class="award-subtext">32nd Annual National Council on
+              Undergraduate Research Conference</i>
+          </p>
+        </details>
+      </div>
 
-            <!-- Dark Matter Math Research -->
-            <div class="research-object">
-                <h3 id="desktop-newton-title">A Mathematical Analysis of Newton's Laws: <br>
-                    Photonic Drag, Dark Matter, and the Milky Way
-                </h3>
+      <!-- Dark Matter Math Research -->
+      <div class="research-object">
+        <h3 id="desktop-newton-title">A Mathematical Analysis of Newton's
+          Laws: <br>
+          Photonic Drag, Dark Matter, and the Milky Way
+        </h3>
 
-                <h3 id="mobile-newton-title">A Mathematical Analysis of Newton's Laws:
-                    Photonic Drag, Dark Matter, and the Milky Way
-                </h3>
+        <h3 id="mobile-newton-title">A Mathematical Analysis of Newton's
+          Laws:
+          Photonic Drag, Dark Matter, and the Milky Way
+        </h3>
 
 
-                <img alt="Dark Matter Project Picture"
-                     id="dark-matter-pic"
-                     src="images/darkmatterprojectpic.png"
-                />
+        <img alt="Dark Matter Project Picture"
+             id="dark-matter-pic"
+             src="images/darkmatterprojectpic.png"
+        />
 
-                <span class="project-image-credit">
+        <span class="project-image-credit">
                     Photo:
                     <a href="https://hubblesite.org/contents/news-releases/2007/news-2007-19.html"
                        target="_blank">
@@ -434,57 +523,65 @@
                 </span>
 
 
-                <p style="margin-top: 1.5rem;">
-                    This research project was a theoretical attempt to find an alternative explanation to dark matter
-                    by introducing a 'photonic drag' term in the classical analysis of Newton's Laws applied to the
-                    Sun as it revolves around the Milky Way.
-                </p>
-
-                <details>
-                    <summary class="details-subsection-header">&nbsp; Presentations</summary>
-
-                    <p>
-                        <a href="darkmatterproject.html" target="_blank">Research PowerPoint Presentation (2019)</a>
-                        <br>
-                        <i class="award-subtext">Pi Mu Epsilon Conference, St. John's University</i>
-                    </p>
-                </details>
-            </div>
-        </article>
-
-        <!-- Contact -->
-        <article id="contact">
-            <h2 class="major">Contact</h2>
-            <form action="mailto:tylerbaxter2024@protonmail.com">
-                <div class="fields">
-                    <div class="field half">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text"/>
-                    </div>
-                    <div class="field half">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="text"/>
-                    </div>
-                    <div class="field">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
-                    </div>
-                </div>
-                <ul class="actions">
-                    <li><input class="primary" type="submit" value="Send Message"/></li>
-                    <li><input type="reset" value="Reset"/></li>
-                </ul>
-            </form>
-        </article>
-    </div>
-
-    <!-- Footer -->
-    <footer id="footer">
-        <p class="copyright">
-            Template: <a href="https://html5up.net">HTML5 UP</a>.<br>
-            Photo: Malikameer/<a href="https://www.shutterstock.com/g/Malikameer" target="_blank">Shutterstock</a>
+        <p style="margin-top: 1.5rem;">
+          This research project was a theoretical attempt to find an
+          alternative explanation to dark matter
+          by introducing a 'photonic drag' term in the classical analysis of
+          Newton's Laws applied to the
+          Sun as it revolves around the Milky Way.
         </p>
-    </footer>
+
+        <details>
+          <summary class="details-subsection-header">&nbsp; Presentations
+          </summary>
+
+          <p>
+            <a href="darkmatterproject.html" target="_blank">Research
+              PowerPoint Presentation (2019)</a>
+            <br>
+            <i class="award-subtext">Pi Mu Epsilon Conference, St. John's
+              University</i>
+          </p>
+        </details>
+      </div>
+    </article>
+
+    <!-- Contact -->
+    <article id="contact">
+      <h2 class="major">Contact</h2>
+      <form action="mailto:tylerbaxter2024@protonmail.com">
+        <div class="fields">
+          <div class="field half">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" />
+          </div>
+          <div class="field half">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="text" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+        </div>
+        <ul class="actions">
+          <li><input class="primary"
+                     type="submit"
+                     value="Send Message" /></li>
+          <li><input type="reset" value="Reset" /></li>
+        </ul>
+      </form>
+    </article>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p class="copyright">
+      Template: <a href="https://html5up.net">HTML5 UP</a>.<br>
+      Photo: Malikameer/<a href="https://www.shutterstock.com/g/Malikameer"
+                           target="_blank">Shutterstock</a>
+    </p>
+  </footer>
 </div>
 
 <!-- BG -->
